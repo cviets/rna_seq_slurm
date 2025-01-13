@@ -2,7 +2,7 @@
 Bash scripts and instructions for submitting RNA-seq alignment jobs to Slurm
 
 ## Prerequisites
-Make sure STAR and SRA Toolkit modules are installed on your machine. If they are already installed, load the modules with `module load`. If they are not already installed, download and unzip them, and add the binaries to your .bashrc file.
+Make sure STAR and SRA Toolkit modules are installed on your machine. If they are already installed, load the modules with `module load`. If they are not already installed, download and unzip them.
 ```
 wget https://github.com/alexdobin/STAR/archive/refs/tags/2.7.11b.tar.gz
 wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.1.1/sratoolkit.3.1.1-centos_linux64.tar.gz
@@ -34,4 +34,11 @@ Now download genomeassembly.sh to your machine.
 wget ???
 ```
 
-Open genomeassembly.sh in the text editor of your choice and change the -p (--partition) flag to your desired partition. Running Make a logs directory and submit your job to Slurm. 
+Open genomeassembly.sh in the text editor of your choice and change the -p (--partition) flag to your desired partition. This script runs STAR to assemble the reference genome with the chosen annotation. Make a logs directory and submit your job to Slurm. 
+```
+mkdir logs
+sbatch genomeassembly.sh
+```
+
+## Step 2: Obtain RNA-seq reads 
+Download the 
