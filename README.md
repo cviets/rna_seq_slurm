@@ -42,6 +42,20 @@ sbatch genomeassembly.sh
 
 ## Step 2: Obtain RNA-seq reads 
 If obtaining RNA-seq reads from a publicly available dataset, go to NIH GEO database at this link: https://www.ncbi.nlm.nih.gov/gds/
+
 Search for the title of your paper under "GEO DataSets".
 <img width="1185" alt="image" src="https://github.com/user-attachments/assets/a59effb7-b145-4b7f-8840-56ec4cdcac5b" />
-Select your paper, scroll all the way down and click the link to "SRA Run Selector". Click "Accession List" under "Total" to download SRR_Acc_List.txt. This file contains the names of the runs in the dataset. 
+Select your paper, scroll all the way down and click the link to "SRA Run Selector". Click "Accession List" under "Total" to download SRR_Acc_List.txt. This file contains the names of the runs in the dataset. On the GEO dataset webpage, note the rough size (in bytes) of all of the read files. Make a directory on your machine where the reads will be stored, and be sure there is enough space to store all the reads. 
+```
+mkdir ~/reads
+```
+Copy SRR_Acc_List.txt from your computer into this directory using `cp` or `scp`.
+
+Now make a directory for the scripts to obtain the reads, and download get_ncbi_fastq_TEMPLATE.sh and batch_reads.sh.
+```
+mkdir ~/reads_obtain
+cd ~/reads_obtain
+wget ???
+wget ???
+```
+Open get_ncbi_fastq_TEMPLATE.sh in the text editor of your choice
