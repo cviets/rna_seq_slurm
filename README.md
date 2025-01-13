@@ -41,4 +41,7 @@ sbatch genomeassembly.sh
 ```
 
 ## Step 2: Obtain RNA-seq reads 
-Download the 
+If obtaining RNA-seq reads from a publicly available dataset, go to NIH GEO database at this link: https://www.ncbi.nlm.nih.gov/gds/
+Search for the title of your paper under "GEO DataSets".
+<img width="1185" alt="image" src="https://github.com/user-attachments/assets/a59effb7-b145-4b7f-8840-56ec4cdcac5b" />
+Select your paper, scroll all the way down and click the link to "SRA Run Selector". Click "Accession List" under "Total" to download SRR_Acc_List.txt. This file contains the names of the runs in the dataset. 
