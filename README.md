@@ -45,11 +45,10 @@ If obtaining RNA-seq reads from a publicly available dataset, go to NIH GEO data
 
 Search for the title of your paper under "GEO DataSets".
 <img width="1185" alt="image" src="https://github.com/user-attachments/assets/a59effb7-b145-4b7f-8840-56ec4cdcac5b" />
-Select your paper, scroll all the way down and click the link to "SRA Run Selector". Click "Accession List" under "Total" to download SRR_Acc_List.txt. This file contains the names of the runs in the dataset. On the GEO dataset webpage, note the rough size (in bytes) of all of the read files. Make a directory on your machine where the reads will be stored, and be sure there is enough space to store all the reads. 
+Select your paper, scroll all the way down and click the link to "SRA Run Selector". Click "Accession List" under "Total" to download SRR_Acc_List.txt. This file contains the names of the runs in the dataset, and we will move it from your computer to your machine soon. On the GEO dataset webpage, note the rough size (in bytes) of all of the read files. Make a directory on your machine where the reads will be stored, and be sure there is enough space to store all the reads. 
 ```
 mkdir ~/reads
 ```
-Copy SRR_Acc_List.txt from your computer into this directory using `cp` or `scp`.
 
 Now make a directory for the scripts to obtain the reads, and download get_ncbi_fastq_TEMPLATE.sh and batch_reads.sh.
 ```
@@ -58,4 +57,11 @@ cd ~/reads_obtain
 wget ???
 wget ???
 ```
-Open get_ncbi_fastq_TEMPLATE.sh in the text editor of your choice
+Open get_ncbi_fastq_TEMPLATE.sh in the text editor of your choice and change the -p (--partition) flag to your desired partition. Also change the `cd` directory into the directory you created to store your reads. Copy SRR_Acc_List.txt from your computer into `reads_obtain` using `cp` or `scp`. Make a logs directory and batch submit your jobs to Slurm. 
+```
+mkdir logs
+sbatch batch_reads.sh
+```
+
+## Step 3: Align and count reads using STAR
+Somewhere on your machine with enough space to store
