@@ -1,4 +1,4 @@
-# rna_seq_slurm
+# RNA-seq_Slurm
 Bash scripts and instructions for submitting RNA-seq alignment jobs to Slurm
 
 ## Prerequisites
